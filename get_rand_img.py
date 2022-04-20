@@ -2,7 +2,7 @@ import os
 import random
 import shutil
 
-path = 'airbus_train_bmp/'
+path = '../airbus_train_bmp/'
 
 nbr_image_w_ship = len([name for name in os.listdir(path + 'bateau/')])
 nbr_image_wo_ship = len([name for name in os.listdir(path + 'pas_bateau/')])
@@ -28,4 +28,4 @@ files = os.listdir(path)
 file = files[rand]
 file = path + file
 print(file)
-shutil.copy(file, 'temp.bmp')
+shutil.copy(file, '../temp.bmp')

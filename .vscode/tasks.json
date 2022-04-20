@@ -1,0 +1,61 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc générer Server",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "circular_buffer.c",
+                "decodageTC.c",
+                "interpreteur.c",
+                "encodageTM.c",
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-lpthread",
+                "-lm"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tâche générée par moi."
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc générer IA",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "json.c",
+                "preprocess.c",
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-lpthread",
+                "-lm"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tâche générée par moi aussi."
+        }
+    ],
+    "version": "2.0.0"
+}
