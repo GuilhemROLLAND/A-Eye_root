@@ -11,9 +11,9 @@
 
 #include "tcp_server.h"
 
-#define IMG_LENGTH 921656
-#define PORT 64000
-struct mainStruct *main_s;
+#define IMG_LENGTH 921656 /*!<Lenght of a 640*480 bmp image*/
+#define PORT 64000 /*! <Chosen port for the application*/
+struct mainStruct *main_s; /*! <reference to struct_allocation.h*/
 
 
 short SocketCreate(void)

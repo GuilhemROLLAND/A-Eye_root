@@ -25,9 +25,9 @@
  */
 typedef struct cmd
 {
-    bool start; /*!<start/stop flag>*/
-    bool weights_update; /*!<flag>*/
-    bool change_mode; /*!<flag>*/
+    bool start; /*!<start/stop flag*/
+    bool weights_update; /*!<flag*/
+    bool change_mode; /*!<flag*/
 } cmd;
 
 /**
@@ -36,8 +36,8 @@ typedef struct cmd
  */
 typedef struct weight_upd
 {
-    char *arch; /*!<Architecture of the CNN in the corresponding format>*/
-    char *filename; /*!<Name of the weight file>*/
+    char *arch; /*!<Architecture of the CNN in the corresponding format*/
+    char *filename; /*!<Name of the weight file*/
 } weight_upd;
 
 /**
@@ -46,8 +46,8 @@ typedef struct weight_upd
  */
 typedef struct chg_mode
 {
-    char mode; /*!<Specify the current mode>*/
-    bool capture; /*!<flag to execute a manual capture>*/
+    char mode; /*!<Specify the current mode*/
+    bool capture; /*!<flag to execute a manual capture*/
 } chg_mode;
 
 /**
@@ -55,8 +55,8 @@ typedef struct chg_mode
  */
 typedef struct buf_f
 {
-    cbuf_handle_t cbuf;  /*!<pointer to the circular buffer (not implemented)>*/
-    bool new_data_f; /*!<flag for new string data>*/
+    cbuf_handle_t cbuf;  /*!<pointer to the circular buffer (not implemented)*/
+    bool new_data_f; /*!<flag for new string data*/
 } buf_f;
 
 /**
@@ -65,10 +65,10 @@ typedef struct buf_f
  */
 typedef struct img
 {
-    bool img_f; /*!<flag when new boat image by IA>*/
-    bool capture_f; /*!<flag when the manual captured image is ready>*/
-    char *addr; /*!<starting addr of the image>*/
-    int length; /*!<length of the image>*/
+    bool img_f; /*!<flag when new boat image by IA*/
+    bool capture_f; /*!<flag when the manual captured image is ready*/
+    char *addr; /*!<starting addr of the image*/
+    int length; /*!<length of the image*/
 } img;
 
 /**
@@ -77,13 +77,13 @@ typedef struct img
  */
 typedef struct mainStruct 
 {
-    cmd *cmd_struct; /*!<command structure>*/
-    chg_mode *chg_mode_struct; /*!<mode structure>*/
-    weight_upd *weight_struct; /*!<weight update structure>*/
-    buf_f *buf_f_struct; /*!<circular buffer struct>*/
-    img *img_s; /*!<image structure>*/
-    char *ack; /*!<String ack updated when receiving a TC>*/
-    int fifo; /*!<ID of the FIFO for communication between AI and Communication>*/
+    cmd *cmd_struct; /*!<command structure*/
+    chg_mode *chg_mode_struct; /*!<mode structure*/
+    weight_upd *weight_struct; /*!<weight update structure*/
+    buf_f *buf_f_struct; /*!<circular buffer struct*/
+    img *img_s; /*!<image structure*/
+    char *ack; /*!<String ack updated when receiving a TC*/
+    int fifo; /*!<ID of the FIFO for communication between AI and Communication*/
 } mainStruct;
 
 #endif

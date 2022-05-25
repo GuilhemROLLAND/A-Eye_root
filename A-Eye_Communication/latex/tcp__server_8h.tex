@@ -1,0 +1,167 @@
+\hypertarget{tcp__server_8h}{}\section{Server/tcp\+\_\+server.h File Reference}
+\label{tcp__server_8h}\index{Server/tcp\+\_\+server.\+h@{Server/tcp\+\_\+server.\+h}}
+
+
+Header for \hyperlink{tcp__server_8c}{tcp\+\_\+server.\+c}.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\+h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$pthread.\+h$>$}\\*
+{\ttfamily \#include $<$fcntl.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../\+T\+C/decodage\+T\+C.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+T\+M/encodage\+T\+M.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../struct\+\_\+allocation.\+h\char`\"{}}\\*
+Include dependency graph for tcp\+\_\+server.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tcp__server_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{tcp__server_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsocket__thr__s}{socket\+\_\+thr\+\_\+s}
+\begin{DoxyCompactList}\small\item\em Socket descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structsocket__thr__s}{socket\+\_\+thr\+\_\+s} \hyperlink{tcp__server_8h_a0ed9372c2f9d382f8831a10af4e4e86d}{socket\+\_\+thr\+\_\+s}\hypertarget{tcp__server_8h_a0ed9372c2f9d382f8831a10af4e4e86d}{}\label{tcp__server_8h_a0ed9372c2f9d382f8831a10af4e4e86d}
+
+\begin{DoxyCompactList}\small\item\em Socket descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+short \hyperlink{tcp__server_8h_a55f9d2f5bcdc14b9506e7616d270266b}{Socket\+Create} (void)
+\begin{DoxyCompactList}\small\item\em Create a tcp socket. \end{DoxyCompactList}\item 
+int \hyperlink{tcp__server_8h_af38650c33f1ecc12020dcfcb653448cc}{Bind\+Created\+Socket} (int h\+Socket)
+\begin{DoxyCompactList}\small\item\em Bind an existing socket to a port and accepting any incoming addr. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{tcp__server_8h_a0538e83943260e3c5c08d6d4675d399c}{thread\+\_\+rcv} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Thread for tcp receive. Constantly receive and decode any incoming TC. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{tcp__server_8h_a2c7c13c109dfbd9f6a2739b815167b63}{thread\+\_\+send} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Thread for tcp sending. Polling on flags to send whenever there is a new ack, an image is processed or manual capture. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{tcp__server_8h_ad5f96bf68589589fdf9e980bfbf8134c}{thread\+\_\+pred} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Thread for fifo polling. Update the processed image flag whenever a positive prediction is returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header for \hyperlink{tcp__server_8c}{tcp\+\_\+server.\+c}. 
+
+\begin{DoxyAuthor}{Author}
+Thomas du Boisrouvray (\href{mailto:thomas.duboisrouvray@elsys-design.com}{\tt thomas.\+duboisrouvray@elsys-\/design.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/05-\/25
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\index{tcp\+\_\+server.\+h@{tcp\+\_\+server.\+h}!Bind\+Created\+Socket@{Bind\+Created\+Socket}}
+\index{Bind\+Created\+Socket@{Bind\+Created\+Socket}!tcp\+\_\+server.\+h@{tcp\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{Bind\+Created\+Socket(int h\+Socket)}{BindCreatedSocket(int hSocket)}}]{\setlength{\rightskip}{0pt plus 5cm}int Bind\+Created\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{h\+Socket}
+\end{DoxyParamCaption}
+)}\hypertarget{tcp__server_8h_af38650c33f1ecc12020dcfcb653448cc}{}\label{tcp__server_8h_af38650c33f1ecc12020dcfcb653448cc}
+
+
+Bind an existing socket to a port and accepting any incoming addr. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Socket} & ref to the socket \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\index{tcp\+\_\+server.\+h@{tcp\+\_\+server.\+h}!Socket\+Create@{Socket\+Create}}
+\index{Socket\+Create@{Socket\+Create}!tcp\+\_\+server.\+h@{tcp\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{Socket\+Create(void)}{SocketCreate(void)}}]{\setlength{\rightskip}{0pt plus 5cm}short Socket\+Create (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{tcp__server_8h_a55f9d2f5bcdc14b9506e7616d270266b}{}\label{tcp__server_8h_a55f9d2f5bcdc14b9506e7616d270266b}
+
+
+Create a tcp socket. 
+
+\begin{DoxyReturn}{Returns}
+short
+\end{DoxyReturn}
+$<$reference to \hyperlink{struct__allocation_8h}{struct\+\_\+allocation.\+h} \index{tcp\+\_\+server.\+h@{tcp\+\_\+server.\+h}!thread\+\_\+pred@{thread\+\_\+pred}}
+\index{thread\+\_\+pred@{thread\+\_\+pred}!tcp\+\_\+server.\+h@{tcp\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{thread\+\_\+pred(void $\ast$arg)}{thread_pred(void *arg)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ thread\+\_\+pred (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}\hypertarget{tcp__server_8h_ad5f96bf68589589fdf9e980bfbf8134c}{}\label{tcp__server_8h_ad5f96bf68589589fdf9e980bfbf8134c}
+
+
+Thread for fifo polling. Update the processed image flag whenever a positive prediction is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & socket informations passed by pthread\+\_\+create() \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ 
+\end{DoxyReturn}
+\index{tcp\+\_\+server.\+h@{tcp\+\_\+server.\+h}!thread\+\_\+rcv@{thread\+\_\+rcv}}
+\index{thread\+\_\+rcv@{thread\+\_\+rcv}!tcp\+\_\+server.\+h@{tcp\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{thread\+\_\+rcv(void $\ast$arg)}{thread_rcv(void *arg)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ thread\+\_\+rcv (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}\hypertarget{tcp__server_8h_a0538e83943260e3c5c08d6d4675d399c}{}\label{tcp__server_8h_a0538e83943260e3c5c08d6d4675d399c}
+
+
+Thread for tcp receive. Constantly receive and decode any incoming TC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & socket informations passed by pthread\+\_\+create() \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ 
+\end{DoxyReturn}
+\index{tcp\+\_\+server.\+h@{tcp\+\_\+server.\+h}!thread\+\_\+send@{thread\+\_\+send}}
+\index{thread\+\_\+send@{thread\+\_\+send}!tcp\+\_\+server.\+h@{tcp\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{thread\+\_\+send(void $\ast$arg)}{thread_send(void *arg)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ thread\+\_\+send (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}\hypertarget{tcp__server_8h_a2c7c13c109dfbd9f6a2739b815167b63}{}\label{tcp__server_8h_a2c7c13c109dfbd9f6a2739b815167b63}
+
+
+Thread for tcp sending. Polling on flags to send whenever there is a new ack, an image is processed or manual capture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & socket informations passed by pthread\+\_\+create() \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ 
+\end{DoxyReturn}

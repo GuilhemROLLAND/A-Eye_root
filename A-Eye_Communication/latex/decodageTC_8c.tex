@@ -1,0 +1,63 @@
+\hypertarget{decodageTC_8c}{}\section{T\+C/decodage\+TC.c File Reference}
+\label{decodageTC_8c}\index{T\+C/decodage\+T\+C.\+c@{T\+C/decodage\+T\+C.\+c}}
+
+
+This file implements the decode\+TC function.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}decodage\+T\+C.\+h\char`\"{}}\\*
+Include dependency graph for decodage\+T\+C.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decodageTC_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{decodageTC_8c_a93ec653baca11670c9480db8552054fe}{decode\+TC} (\hyperlink{structmainStruct}{main\+Struct} $\ast$main\+\_\+s, char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em decode the incoming msg with the code operations described in design. Param update is done by updating the corresponding structures \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file implements the decode\+TC function. 
+
+\begin{DoxyAuthor}{Author}
+Thomas du Boisrouvray (\href{mailto:thomas.duboisrouvray@elsys-design.com}{\tt thomas.\+duboisrouvray@elsys-\/design.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/05-\/25
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\index{decodage\+T\+C.\+c@{decodage\+T\+C.\+c}!decode\+TC@{decode\+TC}}
+\index{decode\+TC@{decode\+TC}!decodage\+T\+C.\+c@{decodage\+T\+C.\+c}}
+\subsubsection[{\texorpdfstring{decode\+T\+C(main\+Struct $\ast$main\+\_\+s, char $\ast$msg)}{decodeTC(mainStruct *main_s, char *msg)}}]{\setlength{\rightskip}{0pt plus 5cm}int decode\+TC (
+\begin{DoxyParamCaption}
+\item[{{\bf main\+Struct} $\ast$}]{main\+\_\+s, }
+\item[{char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{decodageTC_8c_a93ec653baca11670c9480db8552054fe}{}\label{decodageTC_8c_a93ec653baca11670c9480db8552054fe}
+
+
+decode the incoming msg with the code operations described in design. Param update is done by updating the corresponding structures 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & the incoming msg received from server \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if a standard code op is detected, else 0 
+\end{DoxyReturn}

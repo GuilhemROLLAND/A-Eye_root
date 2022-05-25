@@ -1,0 +1,8 @@
+<map id="struct_allocation.h" name="struct_allocation.h">
+<area shape="rect" id="node2" href="$interpreteur_8h.html" title="Header file for interpreteur.c. " alt="" coords="169,80,337,107"/>
+<area shape="rect" id="node5" href="$tcp__server_8h.html" title="Header for tcp_server.c. " alt="" coords="307,229,443,256"/>
+<area shape="rect" id="node3" href="$interpreteur_8c.html" title="This file implements the interpreteur function. " alt="" coords="5,155,173,181"/>
+<area shape="rect" id="node4" href="$decodageTC_8h.html" title="Header of decodageTC.h. " alt="" coords="198,155,327,181"/>
+<area shape="rect" id="node7" href="$decodageTC_8c.html" title="This file implements the decodeTC function. " alt="" coords="154,229,283,256"/>
+<area shape="rect" id="node6" href="$tcp__server_8c.html" title="This file implements a tcp server on port 64000 with a thread for sending and a thread for receiving..." alt="" coords="307,304,443,331"/>
+</map>

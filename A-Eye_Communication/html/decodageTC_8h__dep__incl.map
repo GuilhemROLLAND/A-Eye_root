@@ -1,0 +1,5 @@
+<map id="TC/decodageTC.h" name="TC/decodageTC.h">
+<area shape="rect" id="node2" href="$tcp__server_8h.html" title="Header for tcp_server.c. " alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node4" href="$decodageTC_8c.html" title="This file implements the decodeTC function. " alt="" coords="165,80,294,107"/>
+<area shape="rect" id="node3" href="$tcp__server_8c.html" title="This file implements a tcp server on port 64000 with a thread for sending and a thread for receiving..." alt="" coords="5,155,141,181"/>
+</map>

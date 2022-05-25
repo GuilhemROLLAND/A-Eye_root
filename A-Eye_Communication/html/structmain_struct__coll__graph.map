@@ -1,0 +1,8 @@
+<map id="mainStruct" name="mainStruct">
+<area shape="rect" id="node2" href="$structweight__upd.html" title="Contains the informations needed for a weights update (not implemented) " alt="" coords="5,219,93,311"/>
+<area shape="rect" id="node3" href="$structbuf__f.html" title="Contains the circular buffer handle and the new data flag. " alt="" coords="117,226,219,303"/>
+<area shape="rect" id="node4" href="$structcircular__buf__t.html" title="{circular_buf_t\n|+ buffer\l+ head\l+ tail\l+ max\l+ full\l|}" alt="" coords="118,5,218,141"/>
+<area shape="rect" id="node5" href="$structcmd.html" title="Contains all the commands related flags. " alt="" coords="243,211,368,318"/>
+<area shape="rect" id="node6" href="$structchg__mode.html" title="Contains informations concerning mode and capture flag. " alt="" coords="392,219,475,311"/>
+<area shape="rect" id="node7" href="$structimg.html" title="Contains parameters concerning image transmissions. " alt="" coords="523,204,611,325"/>
+</map>
