@@ -14,7 +14,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "decodageTC.h"
-#include "interpreteur.h"
 
 int decodeTC(mainStruct *main_s, char *msg) 
 {   

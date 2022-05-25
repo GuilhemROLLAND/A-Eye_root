@@ -131,7 +131,7 @@ void *thread_pred(void *arg)
     
     while(1)
     {
-        if ((main_s->fifo = open("../IAtoINT", O_RDONLY)) == -1)
+        if ((main_s->fifo = open("../../IAtoINT", O_RDONLY)) == -1)
         {
             printf("erreur d'ouverture du pipe\n");
             return NULL;
@@ -151,7 +151,7 @@ void *thread_pred(void *arg)
         }
         if (main_s->chg_mode_struct->mode == 0)
         {
-            system("bash ../demo.sh");
+            system("bash ../../demo.sh");
         }
         close(main_s->fifo);
     }

@@ -18,9 +18,9 @@
 #include<sys/types.h>
 #include<pthread.h>
 #include<fcntl.h>
-#include "decodageTC.h"
-#include "encodageTM.h"
-#include "struct_allocation.h"
+#include "../TC/decodageTC.h"
+#include "../TM/encodageTM.h"
+#include "../struct_allocation.h"
 
 
 #ifndef _TCPSERVER_H

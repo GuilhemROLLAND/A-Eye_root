@@ -92,7 +92,7 @@ char *imgEncodedTM(int length)
     imgTM[2] = (length >> 16) & 0xFF;
     imgTM[3] = (length >> 8) & 0xFF;
     imgTM[4] = length & 0xFF;
-    imageInTM(&imgTM[5], "../temp.bmp");
+    imageInTM(&imgTM[5], "../../temp.bmp");
     return imgTM;
 }
 
@@ -109,13 +109,12 @@ char *captureManuelle(int length)
     imgTM[2] = (length >> 16) & 0xFF;
     imgTM[3] = (length >> 8) & 0xFF;
     imgTM[4] = length & 0xFF;
-    imageInTM(&imgTM[5], "../temp.bmp");
+    imageInTM(&imgTM[5], "../../temp.bmp");
     return imgTM;
 }
 
 int imageInTM(char *buffer, char *fileName)
 {
-    // char buffer[2000000] = {0};
     FILE *file = fopen(fileName, "r");
     int len = 0;
     len += fread(buffer + len, 1, 921656, file);

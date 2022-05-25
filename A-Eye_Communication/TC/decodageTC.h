@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
-#include "interpreteur.h"
+#include "../Interpreteur/interpreteur.h"
 
 #ifndef _DECODAGETC_H
 #define _DECODAGETC_H

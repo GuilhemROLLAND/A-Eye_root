@@ -10,8 +10,8 @@
 #include <pthread.h>
 #include <fcntl.h>
 #include <sys/types.h>
-#include "json.h"
-#include "preprocess.h"
+#include "json/json.h"
+#include "preprocess/preprocess.h"
 
 #define USEDEBUGPARAM 1
 #define IMPORTARCHFROMJSON 1
@@ -1339,7 +1339,7 @@ void *runForwardProp(void *arg)
         {
             pred = forwardProp(idxImage, 0, 0, 0);
             int fd;
-            if ((fd = open("/home/root/CommunicationModule/IAtoINT", O_WRONLY)) == -1)
+            if ((fd = open("../IAtoINT", O_WRONLY)) == -1)
             {
                 printf("erreur d'ouverture du pipe\n");
                 return NULL;
