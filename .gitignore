@@ -6,8 +6,6 @@ airbus_train_bmp
 .python-history
 .wget-hsts
 temp.bmp
-.cache
+temp.csv
 .gitconfig
 .gitconfig_backup
-temp.csv
-A-Eye_Visor
