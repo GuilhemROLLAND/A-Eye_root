@@ -30,6 +30,7 @@ On picture bateau3599.jpg with rescal_fl32.json and rescaling with keras
 | Layer 19 result      | layer19.json           | layer19.json                     | Rounding? |
 
 ## Processing Time
+For a 224*224*3 bmp image, on a i7 9th gen @4GHz :
 Process convolution 10 in 0.408835 (23%)  
 Process pooling 11 in 0.013619 (<1%)  
 Process convolution 12 in 1.007322 (60%)  
@@ -43,5 +44,6 @@ Process Output layer 19 in 0.000012 (<1%)
 Process 1/1 pics (1.755841 sec/pic) with 100.00 good predictions  
 
 ## On Zybo's Data
-534 secs to load weights and biases  
-44 secs to process one picture  
+For a 224*224*3 bmp image :
+534 secs to load weights and biases (init AI) 
+44 secs to process one picture (inference)  
