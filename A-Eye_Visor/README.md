@@ -1,15 +1,16 @@
 # A-Eye Visor
 
-## Signal command
+## Develop and Debug Datas
+### Signal command to continue
 pkill --signal SIGUSR1 shipsnet  
 
-## Status
+### Status
 | Name                 | Status | Comments                          |
 | :------------------- | :----- | :-------------------------------- |
 | Forward Propagation  | OK     | Same as python                    |
 | Backward Propagation | HS     | Since memory disposition modified |
 
-## Checklist memory
+### Checklist memory
 On picture bateau3599.jpg with rescal_fl32.json and rescaling with keras    
 | Type                 | Status Python          | Status C                         | Comments   |
 | :------------------- | :--------------------- | :------------------------------- | :--------- |
