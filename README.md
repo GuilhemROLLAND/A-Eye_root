@@ -8,3 +8,5 @@ You must unzip it in the root folder (where this readme is).
 This folder contains the c code to run and use the AI functions.  
 ## A-Eye Communication
 This folder contains the c code to run the server on the device. This will be used to communicate with the AI Controller.  
+## .vscode (makefile, ...)
+Contains the build and compile configuration.  
