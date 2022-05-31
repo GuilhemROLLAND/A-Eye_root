@@ -1,3 +1,13 @@
+/**
+ * @file PREPROCESS.H
+ * @author Thomas du Boisrouvray (thomas.duboisrouvray@elsys-design.com)
+ * @brief header file for preprocess.c
+ * @version 0.1
+ * @date 2022-05-31
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>

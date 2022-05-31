@@ -1,3 +1,14 @@
+/**
+ * @file preprocess.c
+ * @author Thomas du Boisrouvray (thomas.duboisrouvray@elsys-design.com)
+ * @brief This file implements different kind of functions used for preprocess an image before feeding the AI
+ * @version 0.1
+ * @date 2022-05-31
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include "preprocess.h"
 
 // unsigned char *ptr_img =0x1ffeae00;
