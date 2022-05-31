@@ -1,11 +1,5 @@
 #include "json.h"
-/**
- * @brief Write in a file the content of the buffer
- *
- * @param filename name of the file. If exist, will be overwrite
- * @param buffer string buffer with the content
- * @return int Number of characters written
- */
+
 int write_in_file(char *filename, char *buffer)
 {
     FILE *file = fopen(filename, "w+");
@@ -14,13 +8,6 @@ int write_in_file(char *filename, char *buffer)
     return ret;
 }
 
-/**
- * @brief Write in a buffer the content of a file
- *
- * @param filename name of the file
- * @param buffer string buffer with the content
- * @return int Number of characters read
- */
 int read_from_file(char *filename, char *data)
 {
     char buffer[1000000];
@@ -44,8 +31,6 @@ int read_from_file(char *filename, char *data)
 
 unsigned long fsize(char *file)
 {
-    /* returns file size */
-
     FILE *f = fopen(file, "r");
     fseek(f, 0, SEEK_END);
     unsigned long len = (unsigned long)ftell(f);
