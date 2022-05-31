@@ -1,3 +1,14 @@
+/**
+ * @file json.c
+ * @author Guilhem ROLLAND (guilhem.rolland@elsys-design.com)
+ * @brief Usefull functions to deal with json string.
+ * @version 0.1
+ * @date 2022-05-31
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include "json.h"
 
 int write_in_file(char *filename, char *buffer)

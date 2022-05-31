@@ -1,3 +1,14 @@
+/**
+ * @file json_test.c
+ * @author Guilhem ROLLAND (guilhem.rolland@elsys-design.com)
+ * @brief Test code to verify json functions.
+ * @version 0.1
+ * @date 2022-05-31
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include "json.h"
 
 /**

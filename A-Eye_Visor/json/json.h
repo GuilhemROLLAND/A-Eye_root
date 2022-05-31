@@ -1,3 +1,14 @@
+/**
+ * @file json.h
+ * @author Guilhem ROLLAND (guilhem.rolland@elsys-design.com)
+ * @brief Test code to verify json functions.
+ * @version 0.1
+ * @date 2022-05-31
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
