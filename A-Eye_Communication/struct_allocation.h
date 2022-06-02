@@ -77,13 +77,14 @@ typedef struct img
  */
 typedef struct mainStruct 
 {
-    cmd *cmd_struct; /*!<command structure*/
-    chg_mode *chg_mode_struct; /*!<mode structure*/
-    weight_upd *weight_struct; /*!<weight update structure*/
-    buf_f *buf_f_struct; /*!<circular buffer struct*/
-    img *img_s; /*!<image structure*/
-    char *ack; /*!<String ack updated when receiving a TC*/
-    int fifo; /*!<ID of the FIFO for communication between AI and Communication*/
+    cmd *cmd_struct; /*!<command structure>*/
+    chg_mode *chg_mode_struct; /*!<mode structure>*/
+    weight_upd *weight_struct; /*!<weight update structure>*/
+    buf_f *buf_f_struct; /*!<circular buffer struct>*/
+    img *img_s; /*!<image structure>*/
+    char *ack; /*!<String ack updated when receiving a TC>*/
+    int fifo; /*!<ID of the FIFO for communication between AI and Communication>*/
+    bool start_f; /*!<Start/stop flag used because start/stop not implemented yet>*/
 } mainStruct;
 
 #endif

@@ -56,9 +56,15 @@ int decodeTC(mainStruct *main_s, char *msg)
         case '3' :
             // check second byte to know if its start or stop
             if (msg[1] == '1')
+            {
                 main_s->cmd_struct->start = true;
+                main_s->start_f = true;
+            }
             else 
+            {
                 main_s->cmd_struct->start = false;
+                main_s->start_f = true;
+            }
             return 1;
         // update param AI, optional, TO DO
         case '4' :
