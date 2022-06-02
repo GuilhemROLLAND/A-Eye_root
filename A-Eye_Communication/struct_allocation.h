@@ -84,6 +84,7 @@ typedef struct mainStruct
     img *img_s; /*!<image structure>*/
     char *ack; /*!<String ack updated when receiving a TC>*/
     int fifo; /*!<ID of the FIFO for communication between AI and Communication>*/
+    bool start_f; /*!<Start/stop flag used because start/stop not implemented yet>*/
 } mainStruct;
 
 #endif
