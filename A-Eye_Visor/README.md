@@ -1,15 +1,16 @@
 # A-Eye Visor
 
-## Signal command
+## Develop and Debug Datas
+### Signal command to continue
 pkill --signal SIGUSR1 shipsnet  
 
-## Status
+### Status
 | Name                 | Status | Comments                          |
 | :------------------- | :----- | :-------------------------------- |
 | Forward Propagation  | OK     | Same as python                    |
 | Backward Propagation | HS     | Since memory disposition modified |
 
-## Checklist memory
+### Checklist memory
 On picture bateau3599.jpg with rescal_fl32.json and rescaling with keras    
 | Type                 | Status Python          | Status C                         | Comments   |
 | :------------------- | :--------------------- | :------------------------------- | :--------- |
@@ -29,7 +30,9 @@ On picture bateau3599.jpg with rescal_fl32.json and rescaling with keras
 | Bias 19              | bias19.json            | weigths19.json, fin (65)         | Same       |
 | Layer 19 result      | layer19.json           | layer19.json                     | Rounding? |
 
-## Processing Time
+## Performance 
+### Processing Time on a i7 9th gen @4GHz
+For a 224*224*3 bmp image :
 Process convolution 10 in 0.408835 (23%)  
 Process pooling 11 in 0.013619 (<1%)  
 Process convolution 12 in 1.007322 (60%)  
@@ -42,6 +45,15 @@ Process fully connected 18 in 0.000853 (<1%)
 Process Output layer 19 in 0.000012 (<1%)  
 Process 1/1 pics (1.755841 sec/pic) with 100.00 good predictions  
 
-## On Zybo's Data
-534 secs to load weights and biases  
-44 secs to process one picture  
+### Processing Time on Zybo
+For a 224*224*3 bmp image :
+534 secs to load weights and biases (init AI) 
+44 secs to process one picture (inference)  
+
+## Folder description
+### Format
+Debug python script to format as a json the data.  
+### JSON
+Homemade functions to deal with json data.
+### Preprocess
+Functions called by AI to resize the picture.  

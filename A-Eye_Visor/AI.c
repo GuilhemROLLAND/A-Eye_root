@@ -1,3 +1,14 @@
+/**
+ * @file AI.c
+ * @author Guilhem ROLLAND (guilhem.rolland@elsys-design.com)
+ * @brief This code implements a CNN from scratch in C
+ * @version 0.1
+ * @date 2022-05-31
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,21 +24,21 @@
 #include "json/json.h"
 #include "preprocess/preprocess.h"
 
-#define USEDEBUGPARAM 1
-#define IMPORTARCHFROMJSON 1
-#define IMPORTPARAMFROMJSON 1
-#define LOADDATASET 1
-#define TESTONONE 1
-#define FORWARDONLY 1
-#define WAITFORSIGNAL 1
-#define INFERENCE 1
-#define SAVEVALUES 0
-#define DISPLAYTIME 0
+#define USEDEBUGPARAM 1 /*!<1 default value of params, 0 ask user the value*/
+#define IMPORTARCHFROMJSON 1 /*!<1 if you want to import your arch from a json file, 0 if you want to use preloaded architectures*/
+#define IMPORTPARAMFROMJSON 1 /*!<1 if you want to import your weights from a json file, 0 if xavier initialisation*/
+#define LOADDATASET 1 /*!<0 to disable loading of the dataset (time consuming)*/
+#define TESTONONE 1 /*!<1 to use params ideal for one image, else 0*/
+#define FORWARDONLY 1 /*!<1 to disable backprop, else 0*/
+#define WAITFORSIGNAL 1 /*!<1 to wait for SIGUSR1, else 0*/
+#define INFERENCE 1 /*!<1 if you want to work in inference mode, 0 if you want training*/
+#define SAVEVALUES 0 /*!<1 to save every value of the process (used for debug with python), else 0*/
+#define DISPLAYTIME 0 /*!<1 to display time in each AI functions (homemade profiling), else 0*/
 char weights_file[] = "weights_airbus_240_88.json";
 
-#define WIDTH 240
-#define COLORS 3
-#define MAXLAYER 20
+#define WIDTH 240 /*!<width of the image (==length)*/
+#define COLORS 3 /*!<number of color rgb*/
+#define MAXLAYER 20 /*!<max number of layer*/
 
 int rows = 0;
 // LOADING DATA
@@ -184,6 +195,11 @@ float getValidFloat(float minValue, float maxValue)
     return temp_val;
 }
 
+/**
+ * @brief Check for a linux user signal (SIGUSR1) 
+ * 
+ * @return int linux user signal
+ */
 int waitOnSIGUSR1Signal(void)
 {
     sigset_t set;
@@ -547,6 +563,17 @@ int loadTrain(int ct, double validRatio, int sh, float imgScale, float imgBias)
 /**********************************************************************/
 /*      LOAD DATA                                                     */
 /**********************************************************************/
+
+/**
+ * @brief Load images from temp.csv file and rescale.
+ * 
+ * @param ct Max number of images. If >0, user value, else max set to 1e6
+ * @param sh 1 if you want to remove the first line (ex : header), else 0
+ * @param removeCol1 1 if you want to remove the first column (ex : labels), else 0
+ * @param imgScale Scale for rescaling 
+ * @param imgBias Biase for rescaling
+ * @return int number of images processed
+ */
 int loadTest(int ct, int sh, int removeCol1, float imgScale, float imgBias)
 {
     char *data;
@@ -678,6 +705,13 @@ int loadTest(int ct, int sh, int removeCol1, float imgScale, float imgBias)
 /**********************************************************************/
 /*      INIT NET                                                      */
 /**********************************************************************/
+
+/**
+ * @brief Parse the layer from the input str
+ * 
+ * @param str input string containing the layer type and parameters in a corresponding format
+ * @param x layer number
+ */
 void initArch(char *str, int x)
 {
     // PARSES USER INPUT TO CREATE DESIRED NETWORK ARCHITECTURE
@@ -803,9 +837,17 @@ void initArch(char *str, int x)
     strcpy(layerNames[x], str);
 }
 
+
 /**********************************************************************/
 /*      INIT NET                                                      */
 /**********************************************************************/
+
+/**
+ * @brief Initialize the NN with memory allocation and network weights.
+ * From a defined constant you can choose from weights in a json file or Xavier initialization
+ *
+ * @param t Differents types of architectures
+ */
 void initNet(int t)
 {
     // ALLOCATION MEMORY AND INITIALIZE NETWORK WEIGHTS
@@ -970,7 +1012,7 @@ void initNet(int t)
                 if (SAVEVALUES)
                 {
                     char nameFile[30];
-                    sprintf(nameFile, "sauve/weights%d_c.json", idxLayer);
+                    sprintf(nameFile, "save/weights%d_c.json", idxLayer);
                     int nbrParam = 0;
                     if (layerType[idxLayer] == 0) // FULLY CONNECTED
                     {
@@ -1316,6 +1358,12 @@ void *runBackProp(void *arg)
     return NULL;
 }
 
+/**
+ * @brief Run the forward prop, write pred to pipe IAtoINT and print corresponding information
+ * 
+ * @param arg NULL
+ * @return void* 
+ */
 void *runForwardProp(void *arg)
 {
     if (!INFERENCE)
@@ -1576,6 +1624,16 @@ int backProp(int x, float *ent, int ep)
 /**********************************************************************/
 /*      NEURAL NETWORK                                                */
 /**********************************************************************/
+
+/**
+ * @brief Run the forward propagation for the input image and returns the prediction
+ * 
+ * @param image input image 
+ * @param dp 1 if dropout, else 0
+ * @param train 1 if you want to use training dataset, 0 if you want to use test dataset
+ * @param lay set to 0 
+ * @return int prediction
+ */
 int forwardProp(int image, int dp, int train, int lay)
 {
     // FORWARD PROPAGATION WITH 1 IMAGE
@@ -1613,7 +1671,7 @@ int forwardProp(int image, int dp, int train, int lay)
     }
     if (SAVEVALUES)
     {
-        write_float_in_file("sauve/image_preprocessed_c.json", layers[9], layerSizes[9] * layerChan[9]);
+        write_float_in_file("save/image_preprocessed_c.json", layers[9], layerSizes[9] * layerChan[9]);
     }
 
     // HIDDEN LAYERS
@@ -1659,7 +1717,7 @@ int forwardProp(int image, int dp, int train, int lay)
         if (SAVEVALUES)
         {
             char name[30];
-            sprintf(name, "sauve/layer%d_c.json", layer);
+            sprintf(name, "save/layer%d_c.json", layer);
             write_float_in_file(name, layers[layer], layerSizes[layer] * layerChan[layer]);
         }
     }
@@ -1702,7 +1760,7 @@ int forwardProp(int image, int dp, int train, int lay)
     prob = layers[MAXLAYER - 1][imax]; // ugly use of global variable :-(
     if (SAVEVALUES)
     {
-        write_float_in_file("sauve/layer19_c.json", layers[19], layerSizes[19] * layerChan[19]);
+        write_float_in_file("save/layer19_c.json", layers[19], layerSizes[19] * layerChan[19]);
     }
     if (DISPLAYTIME)
     {
@@ -1731,6 +1789,12 @@ float TanH(float x)
     return 2.0 / (1.0 + exp(-2 * x)) - 1.0;
 }
 
+/**
+ * @brief Process the fully connected layer
+ * 
+ * @param idxLayer number of the layer
+ * @param dp dropout ratio
+ */
 void fully_connected_process(int idxLayer, int dp)
 {
     float sum;
@@ -1772,6 +1836,12 @@ void fully_connected_process(int idxLayer, int dp)
     return;
 }
 
+/**
+ * @brief Process the convolution layer
+ * 
+ * @param idxLayer number of the layer
+ * @param dp dropout ratio
+ */
 void convolution_process(int idxLayer, int dp)
 {
     float sum;
@@ -1835,6 +1905,12 @@ void convolution_process(int idxLayer, int dp)
     return;
 }
 
+/**
+ * @brief Process the max pooling layer
+ * 
+ * @param layer number of the layer
+ * @param dp dropout ratio
+ */
 void pooling_process(int layer, int dp)
 {
     float sum, pmax;

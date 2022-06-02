@@ -18,48 +18,32 @@
 
     //STRUCTURES
 
-
     #ifndef H_TELEMESURE
     #define H_TELEMESURE
 
+    /**
+     * @brief Structure containing all the informations related to the TM format
+     * 
+     */
     typedef struct
     {
-        int length;
-        char* addrContent; 
-        char codeOp;
+        int length; /*! <length of the TM*/
+        char* addrContent; /*! <starting addr of the TM content*/
+        char codeOp; /*! <codeOp of the TM*/
     } TELEMESURE;
-    #endif
-
-    #ifndef H_CHANGEMODEACK
-    #define H_CHANGEMODEACK
-
-    typedef enum 
-    {
-        startStopFlag,
-        takePctFlag,
-        loadWeigthsFlag,
-        stringFlag,
-        numberofAck
-    } CHANGEMODEACK;
-    #endif
-
-    #ifndef H_TYPEOFTM
-    #define H_TYPEOFTM
-
-    typedef struct 
-    {
-        bool imgFlag;
-        CHANGEMODEACK ackFlag; 
-    } TYPEOFTM;
     #endif
 
     #ifndef H_STRINGLENGTH
     #define H_STRINGLENGTH
 
+    /**
+     * @brief Structure for C string management
+     * 
+     */
     typedef struct
     {
-        char length;
-        char* string; 
+        char length; /*! <Length of the string*/
+        char* string; /*! <string*/
     } STRINGLENGTH;
     #endif
 

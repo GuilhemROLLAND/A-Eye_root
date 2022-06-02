@@ -1,0 +1,178 @@
+\hypertarget{encodageTM_8c}{}\section{T\+M/encodage\+TM.c File Reference}
+\label{encodageTM_8c}\index{T\+M/encodage\+T\+M.\+c@{T\+M/encodage\+T\+M.\+c}}
+
+
+This file implements differents functions for TM encoding.  
+
+
+{\ttfamily \#include \char`\"{}encodage\+T\+M.\+h\char`\"{}}\\*
+Include dependency graph for encodage\+T\+M.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{encodageTM_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structSTRINGLENGTH}{S\+T\+R\+I\+N\+G\+L\+E\+N\+G\+TH} $\ast$ \hyperlink{encodageTM_8c_a43310c132fb387882270072e2098c850}{ack\+Txt\+File\+Reading} (char $\ast$file\+Path)
+\begin{DoxyCompactList}\small\item\em read a txt file containing the ack and outputs the ack in string format \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{encodageTM_8c_ada59d38cabaf2d0e6866067945bd9c23}{code\+Op\+Concat} (\hyperlink{structSTRINGLENGTH}{S\+T\+R\+I\+N\+G\+L\+E\+N\+G\+TH} $\ast$input\+String, char code\+Op, char $\ast$tm)
+\begin{DoxyCompactList}\small\item\em add corresponding codeop to the msg \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{encodageTM_8c_a1df2880859d47be2e906baa7981befa6}{string\+Encoded\+TM} (\hyperlink{structSTRINGLENGTH}{S\+T\+R\+I\+N\+G\+L\+E\+N\+G\+TH} $\ast$input\+String, unsigned char type\+Of\+Ack)
+\begin{DoxyCompactList}\small\item\em convert a string into a telemesure \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{encodageTM_8c_a33ed2ae38b7cdfe832883fcda4c5c038}{img\+Encoded\+TM} (int length)
+\begin{DoxyCompactList}\small\item\em convert an img into a telemesure \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{encodageTM_8c_aebcec2b6449663632fc9e7d9b1f80334}{capture\+Manuelle} (int length)
+\begin{DoxyCompactList}\small\item\em convert a manual captured img to a TM \end{DoxyCompactList}\item 
+int \hyperlink{encodageTM_8c_a32ddc2e6ae6a9fd9664dd252d0877fef}{image\+In\+TM} (char $\ast$buffer, char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em get data from file and return the data in a char buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file implements differents functions for TM encoding. 
+
+\begin{DoxyAuthor}{Author}
+Thomas du Boisrouvray (\href{mailto:thomas.duboisrouvray@elsys-design.com}{\tt thomas.\+duboisrouvray@elsys-\/design.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/05-\/25
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\index{encodage\+T\+M.\+c@{encodage\+T\+M.\+c}!ack\+Txt\+File\+Reading@{ack\+Txt\+File\+Reading}}
+\index{ack\+Txt\+File\+Reading@{ack\+Txt\+File\+Reading}!encodage\+T\+M.\+c@{encodage\+T\+M.\+c}}
+\subsubsection[{\texorpdfstring{ack\+Txt\+File\+Reading(char $\ast$file\+Path)}{ackTxtFileReading(char *filePath)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+R\+I\+N\+G\+L\+E\+N\+G\+TH}$\ast$ ack\+Txt\+File\+Reading (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{file\+Path}
+\end{DoxyParamCaption}
+)}\hypertarget{encodageTM_8c_a43310c132fb387882270072e2098c850}{}\label{encodageTM_8c_a43310c132fb387882270072e2098c850}
+
+
+read a txt file containing the ack and outputs the ack in string format 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & txt file containing the ack \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ ack in a string format 
+\end{DoxyReturn}
+\index{encodage\+T\+M.\+c@{encodage\+T\+M.\+c}!capture\+Manuelle@{capture\+Manuelle}}
+\index{capture\+Manuelle@{capture\+Manuelle}!encodage\+T\+M.\+c@{encodage\+T\+M.\+c}}
+\subsubsection[{\texorpdfstring{capture\+Manuelle(int length)}{captureManuelle(int length)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ capture\+Manuelle (
+\begin{DoxyParamCaption}
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}\hypertarget{encodageTM_8c_aebcec2b6449663632fc9e7d9b1f80334}{}\label{encodageTM_8c_aebcec2b6449663632fc9e7d9b1f80334}
+
+
+convert a manual captured img to a TM 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & length of the img \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ char$\ast$ ptr to the TM 
+\end{DoxyReturn}
+\index{encodage\+T\+M.\+c@{encodage\+T\+M.\+c}!code\+Op\+Concat@{code\+Op\+Concat}}
+\index{code\+Op\+Concat@{code\+Op\+Concat}!encodage\+T\+M.\+c@{encodage\+T\+M.\+c}}
+\subsubsection[{\texorpdfstring{code\+Op\+Concat(\+S\+T\+R\+I\+N\+G\+L\+E\+N\+G\+T\+H $\ast$input\+String, char code\+Op, char $\ast$tm)}{codeOpConcat(STRINGLENGTH *inputString, char codeOp, char *tm)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ code\+Op\+Concat (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+R\+I\+N\+G\+L\+E\+N\+G\+TH} $\ast$}]{input\+String, }
+\item[{char}]{code\+Op, }
+\item[{char $\ast$}]{tm}
+\end{DoxyParamCaption}
+)}\hypertarget{encodageTM_8c_ada59d38cabaf2d0e6866067945bd9c23}{}\label{encodageTM_8c_ada59d38cabaf2d0e6866067945bd9c23}
+
+
+add corresponding codeop to the msg 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+String} & the input message \\
+\hline
+{\em code\+Op} & corresponding code\+Op \\
+\hline
+{\em tm} & output string containing tm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ tm \+: the tm 
+\end{DoxyReturn}
+\index{encodage\+T\+M.\+c@{encodage\+T\+M.\+c}!image\+In\+TM@{image\+In\+TM}}
+\index{image\+In\+TM@{image\+In\+TM}!encodage\+T\+M.\+c@{encodage\+T\+M.\+c}}
+\subsubsection[{\texorpdfstring{image\+In\+T\+M(char $\ast$buffer, char $\ast$file\+Name)}{imageInTM(char *buffer, char *fileName)}}]{\setlength{\rightskip}{0pt plus 5cm}int image\+In\+TM (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buffer, }
+\item[{char $\ast$}]{file}
+\end{DoxyParamCaption}
+)}\hypertarget{encodageTM_8c_a32ddc2e6ae6a9fd9664dd252d0877fef}{}\label{encodageTM_8c_a32ddc2e6ae6a9fd9664dd252d0877fef}
+
+
+get data from file and return the data in a char buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & out buffer \\
+\hline
+{\em file} & filename \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\index{encodage\+T\+M.\+c@{encodage\+T\+M.\+c}!img\+Encoded\+TM@{img\+Encoded\+TM}}
+\index{img\+Encoded\+TM@{img\+Encoded\+TM}!encodage\+T\+M.\+c@{encodage\+T\+M.\+c}}
+\subsubsection[{\texorpdfstring{img\+Encoded\+T\+M(int length)}{imgEncodedTM(int length)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ img\+Encoded\+TM (
+\begin{DoxyParamCaption}
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}\hypertarget{encodageTM_8c_a33ed2ae38b7cdfe832883fcda4c5c038}{}\label{encodageTM_8c_a33ed2ae38b7cdfe832883fcda4c5c038}
+
+
+convert an img into a telemesure 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & starting address of the img \\
+\hline
+{\em length} & length of the img \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+E\+L\+E\+M\+E\+S\+U\+R\+E$\ast$ struct containing the starting addr of the data, code\+Op and length 
+\end{DoxyReturn}
+\index{encodage\+T\+M.\+c@{encodage\+T\+M.\+c}!string\+Encoded\+TM@{string\+Encoded\+TM}}
+\index{string\+Encoded\+TM@{string\+Encoded\+TM}!encodage\+T\+M.\+c@{encodage\+T\+M.\+c}}
+\subsubsection[{\texorpdfstring{string\+Encoded\+T\+M(\+S\+T\+R\+I\+N\+G\+L\+E\+N\+G\+T\+H $\ast$input\+String, unsigned char type\+Of\+Ack)}{stringEncodedTM(STRINGLENGTH *inputString, unsigned char typeOfAck)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ string\+Encoded\+TM (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+R\+I\+N\+G\+L\+E\+N\+G\+TH} $\ast$}]{input\+String, }
+\item[{unsigned char}]{type\+Of\+Ack}
+\end{DoxyParamCaption}
+)}\hypertarget{encodageTM_8c_a1df2880859d47be2e906baa7981befa6}{}\label{encodageTM_8c_a1df2880859d47be2e906baa7981befa6}
+
+
+convert a string into a telemesure 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+String} & input string with the length \\
+\hline
+{\em type\+Of\+Ack} & ack type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+E\+L\+E\+M\+E\+S\+U\+R\+E$\ast$ struct containing the starting addr of the data, code\+Op and length 
+\end{DoxyReturn}

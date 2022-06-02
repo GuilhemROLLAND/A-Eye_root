@@ -26,10 +26,14 @@
 #ifndef _TCPSERVER_H
 #define _TCPSERVER_H
 
+/**
+ * @brief Socket descriptor
+ * 
+ */
 typedef struct socket_thr_s 
 {
-    int sock;
-    int socket_desc;
+    int sock; /*! <id of the socket*/
+    int socket_desc; /*! <socket descriptor */
 } socket_thr_s;
 
 /**

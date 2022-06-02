@@ -6,14 +6,17 @@
 #ifndef _CIRCULARBUFFER_H
 #define _CIRCULARBUFFER_H
 
-    // Opaque circular buffer structure
+    /**
+     * @brief circular buffer of string with a fixed size
+     * 
+     */
     typedef struct circular_buf_t
     {
-        char *buffer[10];
-        int head;
-        int tail;
-        int max; // of the buffer
-        bool full;
+        char *buffer[10]; /*! <buffer of string, size 10*/
+        int head; /*! <pointer head*/
+        int tail; /*! <pointer tail*/ 
+        int max;  /*! <max size of the buffer*/
+        bool full; /*! <flag if full or not*/
     } circular_buf_t;
 
     // Handle type, the way users interact with the API

@@ -1,0 +1,7 @@
+<map id="Debug/script_debug_interpreteur.c" name="Debug/script_debug_interpreteur.c">
+<area shape="rect" id="node2" href="$interpreteur_8h.html" title="Header file for interpreteur.c. " alt="" coords="281,169,380,196"/>
+<area shape="rect" id="node12" href="$encodage_t_m_8h.html" title="Header for encodageTM.c. " alt="" coords="419,244,527,271"/>
+<area shape="rect" id="node13" href="$decodage_t_c_8h.html" title="Header of decodageTC.h. " alt="" coords="277,95,384,121"/>
+<area shape="rect" id="node3" href="$struct__allocation_8h.html" title="This file defines the structures used in CommunicationModule and the imports. " alt="" coords="267,244,395,271"/>
+<area shape="rect" id="node9" href="$circular__buffer_8h.html" title="Circular_buffer/circular\l_buffer.h" alt="" coords="326,319,479,360"/>
+</map>
