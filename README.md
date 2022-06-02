@@ -5,8 +5,8 @@ The airbus test dataset can be found [here](https://drive.google.com/file/d/1odG
 Or you can use the [direct download link](https://drive.google.com/uc?export=download&id=1odGQm0w5xhjG1suTzqstuRMIkoTY4mYx)  
 You must unzip it in the root folder (where this readme is).  
 ## How to run 
-Compile the file using VsCode tasks.json
-Run the init.sh script
+Compile the file using VsCode tasks.json  
+Run the init.sh script  
 :)
 ## Folders Description
 ### A-Eye Visor
