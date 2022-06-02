@@ -10,7 +10,6 @@
  */
 
 #include "interpreteur.h"
-#include "encodageTM.h"
 
 #define IMG_LENGTH 921656
 
