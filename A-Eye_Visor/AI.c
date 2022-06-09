@@ -34,7 +34,7 @@
 #define INFERENCE 1 /*!<1 if you want to work in inference mode, 0 if you want training*/
 #define SAVEVALUES 0 /*!<1 to save every value of the process (used for debug with python), else 0*/
 #define DISPLAYTIME 0 /*!<1 to display time in each AI functions (homemade profiling), else 0*/
-char weights_file[] = "weights_airbus_240_88.json";
+char weights_file[] = "weights_airbus_240_90.json";
 
 #define WIDTH 240 /*!<width of the image (==length)*/
 #define COLORS 3 /*!<number of color rgb*/
