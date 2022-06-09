@@ -9,6 +9,5 @@ temp.bmp
 temp.csv
 .gitconfig
 .gitconfig_backup
-A-Eye_Communication/Server/tcp_server
-.gitignore
 A-Eye_Visor/AI
+A-Eye_Communication/Server/tcp_server

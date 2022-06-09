@@ -61,7 +61,10 @@ void *thread_rcv(void *arg)
                 // if no code op, no need to call interpreteur
                 if (decodeTC(main_s, client_message) == 0)
                     printf("Not a TC\n");
-                main_s->ack = interpreteur(main_s);
+                if (main_s->start_f == false)
+                {
+                    main_s->ack = interpreteur(main_s);
+                }
             }
         }
     }
@@ -179,32 +182,32 @@ int BindCreatedSocket(int hSocket)
 
 int main()
 {
-    if ((main_s = malloc(sizeof(mainStruct))) == NULL)
+    if ((main_s = calloc(1,sizeof(mainStruct))) == NULL)
     {
         printf("erreur allocation mémoire\n");
         return -1;
     }
-    if ((main_s->img_s = malloc(sizeof(img))) == NULL)
+    if ((main_s->img_s = calloc(1,sizeof(img))) == NULL)
     {
         printf("erreur allocation mémoire\n");
         return -1;
     }
-    if ((main_s->cmd_struct = malloc(sizeof(cmd))) == NULL)
+    if ((main_s->cmd_struct = calloc(1,sizeof(cmd))) == NULL)
     {
         printf("erreur allocation mémoire\n");
         return -1;
     }
-    if ((main_s->chg_mode_struct = malloc(sizeof(chg_mode))) == NULL)
+    if ((main_s->chg_mode_struct = calloc(1,sizeof(chg_mode))) == NULL)
     {
         printf("erreur allocation mémoire\n");
         return -1;
     }
-    if ((main_s->weight_struct = malloc(sizeof(weight_upd))) == NULL)
+    if ((main_s->weight_struct = calloc(1,sizeof(weight_upd))) == NULL)
     {
         printf("erreur allocation mémoire\n");
         return -1;
     }
-    if ((main_s->buf_f_struct = malloc(sizeof(circular_buf_t) + sizeof(bool))) == NULL)
+    if ((main_s->buf_f_struct = calloc(1,sizeof(circular_buf_t) + sizeof(bool))) == NULL)
     {
         printf("erreur allocation mémoire\n");
         return -1;
